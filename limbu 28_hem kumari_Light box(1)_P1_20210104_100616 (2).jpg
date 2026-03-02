@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload X-ray</title>
+</head>
+<body>
+    <h2>Upload OPG X-ray</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="xray" required>
+        <br><br>
+        <button type="submit">Identify</button>
+    </form>
+
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>

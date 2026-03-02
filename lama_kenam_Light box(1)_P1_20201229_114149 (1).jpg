@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dental Disaster Identification</title>
+</head>
+<body>
+    <h1>Dental Disaster Victim Identification</h1>
+
+    <a href="/identify">
+        <button>Identify Victim</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,28 @@
+from flask import Flask, render_template, request
+import os
+from identify_victim import identify_victim
+
+app = Flask(__name__)
+
+UPLOAD_FOLDER = "uploads"
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+
+@app.route("/")
+def home():
+    return render_template("home.html")
+
+@app.route("/identify", methods=["GET", "POST"])
+def identify():
+    if request.method == "POST":
+        file = request.files["xray"]
+        if file:
+            path = os.path.join(app.config["UPLOAD_FOLDER"], file.filename)
+            file.save(path)
+
+            result = identify_victim(path)
+            return render_template("result.html", result=result)
+
+    return render_template("identify.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)
